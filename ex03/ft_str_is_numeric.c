@@ -1,28 +1,23 @@
 #include <stdio.h>
 
-int ft_str_is_numeric(char *str)
+int		ft_str_is_numeric(char *str)
 {
-	int	count;
+	int str_numeric;
+	int i;
 
-	count = 0;
-	if (str != 0)
+	str_numeric = 1;
+	i = 0;
+	while (str[i] != '\0')
 	{
-		while(str[count] != '\0')
+		if (!(str[i] >= '0' && str[i] <= '9'))
 		{
-			count++;
-			if(str[count] >= 48 && str[count] <= 57)
-				return(1);
-			else
-				return(0);
+			str_numeric = 0;
 		}
+		i++;
 	}
-	return (1);
+	return (str_numeric);
 }
-
-int	main()
+int	main()		
 {
-
-	printf ("%d",ft_str_is_numeric(""));
-
-	return (0);
+	printf("%d", ft_str_is_numeric("9"));
 }
