@@ -2,36 +2,36 @@
 
 char	*ft_strcapitalize(char *str)
 {
-	int i;
+	int count;
 
 	if (str[0] >= 'a' && str[0] <= 'z')
 		str[0] -= 32;
-	i = 1;
-	while (str[i] != '\0')
+	count = 0;
+	while (str[count] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if (str[count] >= 'A' && str[count] <= 'Z')
+			str[count] += 32;
+		if (str[count] >= 'a' && str[count] <= 'z')
 		{
-			if (!(str[i - 1] >= 'a' && str[i - 1] <= 'z'))
+			if (!(str[count - 1] >= 'a' && str[count - 1] <= 'z'))
 			{
-				if (!(str[i - 1] >= '0' && str[i - 1] <= '9'))
+				if (!(str[count - 1] >= '0' && str[count - 1] <= '9'))
 				{
-					if (!(str[i - 1] <= 'Z' && str[i - 1] >= 'A'))
+					if (!(str[count - 1] <= 'Z' && str[count - 1] >= 'A'))
 					{
-						str[i] -= 32;
+						str[count] -= 32;
 					}
 				}
 			}
 		}
-		i++;
+		count++;
 	}
 	return (str);
 }
 
 int	main()
 {
-	char	c[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	printf("%s", ft_strcapitalize(c));
+	char	s[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	printf("%s\n", ft_strcapitalize(s));
 	return (0);
 }
