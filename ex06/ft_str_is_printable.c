@@ -22,7 +22,7 @@ int ft_str_is_printable(char *str)
 int	main()
 {
 
-	printf ("%d",ft_str_is_printable("a"));
+	printf ("%d",ft_str_is_printable(""));
 
 	return (0);
 }
